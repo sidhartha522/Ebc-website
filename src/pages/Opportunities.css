@@ -1,0 +1,109 @@
+.opportunities-page {
+  min-height: 100vh;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.role-card {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+}
+
+.role-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.role-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.role-time {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--brand-primary);
+  background: var(--brand-primary-subtle);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.role-desc {
+  font-size: var(--text-sm);
+  color: var(--text-mist);
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+}
+
+.role-responsibilities {
+  margin-bottom: var(--space-5);
+}
+
+.role-responsibilities h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.role-responsibilities ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.role-responsibilities li {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.role-responsibilities li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--brand-primary);
+}
+
+.role-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  flex: 1;
+}
+
+.role-skill-tag {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-mist);
+  padding: var(--space-1) var(--space-3);
+  background: var(--bg-slate);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.role-card-footer {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+}

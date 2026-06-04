@@ -1,0 +1,19 @@
+.home-page {
+  position: relative;
+}
+
+/* Section dividers */
+.home-page > section + section {
+  position: relative;
+}
+
+.home-page > section + section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(80%, 600px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bg-slate), transparent);
+}

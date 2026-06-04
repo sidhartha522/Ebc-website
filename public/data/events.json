@@ -1,0 +1,64 @@
+[
+  {
+    "id": "evt-001",
+    "name": "EBC Meetup #27 — Founder Connect",
+    "banner": "/images/events/event-1.jpg",
+    "description": "Join us for an evening of networking, startup pitches, and meaningful conversations. Meet founders, investors, and builders from across Hyderabad. Whether you're building your first startup or your fifth, this is the room you want to be in.",
+    "date": "2026-06-21",
+    "time": "10:00 AM - 1:00 PM",
+    "venue": "T-Hub 2.0, Raidurg, Hyderabad",
+    "mapsLink": "https://maps.google.com/?q=T-Hub+2.0+Hyderabad",
+    "speakers": [
+      {
+        "name": "Sidhartha Juluri",
+        "role": "Founder, EBC",
+        "photo": "/images/stories/founder.jpg"
+      }
+    ],
+    "registrationLink": "https://forms.google.com/",
+    "gallery": [],
+    "status": "upcoming"
+  },
+  {
+    "id": "evt-002",
+    "name": "EBC Startup Showcase #5",
+    "banner": "/images/events/event-2.jpg",
+    "description": "A platform for early-stage founders to showcase their startups, get feedback from experienced entrepreneurs, and connect with potential co-founders and investors. 5-minute pitches followed by Q&A and networking.",
+    "date": "2026-07-05",
+    "time": "2:00 PM - 5:00 PM",
+    "venue": "WeWork Galaxy, Residency Road, Hyderabad",
+    "mapsLink": "https://maps.google.com/?q=WeWork+Galaxy+Hyderabad",
+    "speakers": [],
+    "registrationLink": "https://forms.google.com/",
+    "gallery": [],
+    "status": "upcoming"
+  },
+  {
+    "id": "evt-003",
+    "name": "EBC x Student Founders Meetup",
+    "banner": "/images/events/event-3.jpg",
+    "description": "Exclusive meetup for student founders and aspiring entrepreneurs. Learn from founders who started while in college, find co-founders from your campus, and get mentorship from experienced builders.",
+    "date": "2026-07-19",
+    "time": "11:00 AM - 2:00 PM",
+    "venue": "91springboard, Kondapur, Hyderabad",
+    "mapsLink": "https://maps.google.com/?q=91springboard+Kondapur+Hyderabad",
+    "speakers": [],
+    "registrationLink": "https://forms.google.com/",
+    "gallery": [],
+    "status": "upcoming"
+  },
+  {
+    "id": "evt-004",
+    "name": "EBC Networking Night #12",
+    "banner": "/images/events/event-4.jpg",
+    "description": "Our signature monthly networking event brought together 50+ founders, students, and business owners for an evening of connections. Attendees found co-founders, formed partnerships, and built relationships that last.",
+    "date": "2026-05-10",
+    "time": "6:00 PM - 9:00 PM",
+    "venue": "The Starter Labs, Gachibowli, Hyderabad",
+    "mapsLink": "https://maps.google.com/?q=Gachibowli+Hyderabad",
+    "speakers": [],
+    "registrationLink": "",
+    "gallery": [],
+    "status": "past"
+  }
+]

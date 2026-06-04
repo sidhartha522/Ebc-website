@@ -1,0 +1,42 @@
+[
+  {
+    "id": "wg-001",
+    "name": "EBC LB Nagar",
+    "area": "LB Nagar",
+    "description": "Connect with founders, students, and professionals in the LB Nagar area. Announcement-only community.",
+    "whatsappLink": "https://chat.whatsapp.com/",
+    "active": true
+  },
+  {
+    "id": "wg-002",
+    "name": "EBC Chaitanyapuri",
+    "area": "Chaitanyapuri",
+    "description": "Local builder community for Chaitanyapuri area. Stay updated on meetups and opportunities.",
+    "whatsappLink": "https://chat.whatsapp.com/",
+    "active": true
+  },
+  {
+    "id": "wg-003",
+    "name": "EBC Dilsukhnagar",
+    "area": "Dilsukhnagar",
+    "description": "Join the Dilsukhnagar builder community. Meet local founders and professionals.",
+    "whatsappLink": "https://chat.whatsapp.com/",
+    "active": true
+  },
+  {
+    "id": "wg-004",
+    "name": "EBC Nagole",
+    "area": "Nagole",
+    "description": "Nagole area community for aspiring founders and business owners. Weekly updates and event alerts.",
+    "whatsappLink": "https://chat.whatsapp.com/",
+    "active": true
+  },
+  {
+    "id": "wg-005",
+    "name": "EBC Uppal",
+    "area": "Uppal",
+    "description": "Connect with the builder community in Uppal. Announcements, events, and opportunities.",
+    "whatsappLink": "https://chat.whatsapp.com/",
+    "active": true
+  }
+]

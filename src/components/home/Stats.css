@@ -1,0 +1,36 @@
+.stats {
+  position: relative;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  max-width: 900px;
+  margin: 0 auto var(--space-12);
+}
+
+.stats-tagline {
+  text-align: center;
+}
+
+.stats-location-badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: var(--space-2);
+}
+
+.stats-tagline p {
+  font-size: var(--text-base);
+  color: var(--text-dim);
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}

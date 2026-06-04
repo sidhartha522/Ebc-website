@@ -1,0 +1,92 @@
+[
+  {
+    "id": "opp-001",
+    "role": "Sponsorship Lead",
+    "description": "Help secure sponsors and partnerships for EBC events. Work directly with founders and brands to build mutually valuable relationships.",
+    "responsibilities": [
+      "Identify and reach out to potential sponsors",
+      "Negotiate sponsorship deals and packages",
+      "Maintain relationships with existing partners",
+      "Create sponsorship proposals and decks"
+    ],
+    "skills": ["Sales", "Negotiation", "Partnerships", "Business Development"],
+    "timeCommitment": "3-5 Hours Weekly",
+    "formLink": "https://forms.google.com/",
+    "active": true
+  },
+  {
+    "id": "opp-002",
+    "role": "Venue Lead",
+    "description": "Find and secure venues for EBC meetups and events. Build relationships with co-working spaces, cafes, and event venues across Hyderabad.",
+    "responsibilities": [
+      "Scout and evaluate potential venues",
+      "Negotiate venue partnerships and deals",
+      "Coordinate logistics with venue managers",
+      "Ensure venues meet community needs"
+    ],
+    "skills": ["Outreach", "Communication", "Negotiation"],
+    "timeCommitment": "2-4 Hours Weekly",
+    "formLink": "https://forms.google.com/",
+    "active": true
+  },
+  {
+    "id": "opp-003",
+    "role": "Guest Relations Lead",
+    "description": "Manage guest speakers, panelists, and special invitees for EBC events. Ensure every guest has an exceptional experience.",
+    "responsibilities": [
+      "Identify and invite potential speakers",
+      "Coordinate with guests on event details",
+      "Manage guest experience at events",
+      "Build a network of industry experts"
+    ],
+    "skills": ["Networking", "Outreach", "Relationship Management"],
+    "timeCommitment": "3-5 Hours Weekly",
+    "formLink": "https://forms.google.com/",
+    "active": true
+  },
+  {
+    "id": "opp-004",
+    "role": "Social Media Team",
+    "description": "Create engaging content for EBC's social media presence. Build the brand, grow the following, and showcase the community's impact.",
+    "responsibilities": [
+      "Create and schedule social media posts",
+      "Design graphics and visual content",
+      "Manage Instagram and other social platforms",
+      "Capture and share event highlights"
+    ],
+    "skills": ["Content Creation", "Branding", "Marketing"],
+    "timeCommitment": "3-6 Hours Weekly",
+    "formLink": "https://forms.google.com/",
+    "active": true
+  },
+  {
+    "id": "opp-005",
+    "role": "Reddit & Community Growth Team",
+    "description": "Drive community growth through Reddit, online forums, and strategic partnerships. Help EBC reach more builders across Hyderabad.",
+    "responsibilities": [
+      "Create and share content on Reddit and forums",
+      "Engage with potential community members online",
+      "Develop growth strategies and campaigns",
+      "Track and analyze community growth metrics"
+    ],
+    "skills": ["Growth Marketing", "Community Building", "Content Strategy"],
+    "timeCommitment": "2-5 Hours Weekly",
+    "formLink": "https://forms.google.com/",
+    "active": true
+  },
+  {
+    "id": "opp-006",
+    "role": "On Ground Operations Team",
+    "description": "Be the backbone of EBC events. Handle on-ground logistics, registration, setup, and ensure every event runs smoothly.",
+    "responsibilities": [
+      "Manage event day operations and logistics",
+      "Handle attendee registration and check-in",
+      "Coordinate with venue staff and vendors",
+      "Ensure smooth event execution"
+    ],
+    "skills": ["Leadership", "Event Management", "Operations"],
+    "timeCommitment": "Event Days",
+    "formLink": "https://forms.google.com/",
+    "active": true
+  }
+]

@@ -1,0 +1,77 @@
+.counter-card {
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.counter-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-brand-subtle);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.counter-card:hover {
+  border-color: var(--glass-border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.counter-card:hover::before {
+  opacity: 1;
+}
+
+.counter-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--brand-primary-subtle);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.counter-value {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-2);
+}
+
+.counter-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.counter-suffix {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--brand-primary);
+}
+
+.counter-label {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-sm);
+  color: var(--text-mist);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

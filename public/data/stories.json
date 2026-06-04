@@ -1,0 +1,37 @@
+[
+  {
+    "id": "story-001",
+    "name": "Rahul Sharma",
+    "designation": "Co-Founder, TechNova",
+    "photo": "/images/stories/story-1.jpg",
+    "story": "Found my co-founder through EBC. We met at Meetup #15 and within 3 months launched our SaaS product. The community gave us our first 50 users."
+  },
+  {
+    "id": "story-002",
+    "name": "Priya Reddy",
+    "designation": "Student, IIIT Hyderabad",
+    "photo": "/images/stories/story-2.jpg",
+    "story": "Got my first internship through EBC. A founder I met at a networking event offered me a role that changed my career trajectory completely."
+  },
+  {
+    "id": "story-003",
+    "name": "Aditya Krishnan",
+    "designation": "Founder, GrowthPulse",
+    "photo": "/images/stories/story-3.jpg",
+    "story": "Found early users for my startup through EBC community. The feedback loop from real founders helped me pivot and find product-market fit faster."
+  },
+  {
+    "id": "story-004",
+    "name": "Meera Joshi",
+    "designation": "Business Owner",
+    "photo": "/images/stories/story-4.jpg",
+    "story": "Met amazing people through EBC who became not just business connections but genuine friends. The community culture here is unlike anything else in Hyderabad."
+  },
+  {
+    "id": "story-005",
+    "name": "Vikram Patel",
+    "designation": "Full-Stack Developer",
+    "photo": "/images/stories/story-5.jpg",
+    "story": "As a working professional, EBC helped me find a co-founder for my side project. We now have paying customers and are planning to go full-time."
+  }
+]
