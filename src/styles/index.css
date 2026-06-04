@@ -24,13 +24,13 @@
   --text-heading: #FFFFFF;
   --text-white: #FFFFFF;
 
-  /* Brand — Electric Cyan */
-  --brand-primary: #00F0FF;
-  --brand-primary-light: #70FFFF;
-  --brand-primary-dark: #0099A8;
-  --brand-primary-glow: rgba(0, 240, 255, 0.2);
-  --brand-primary-glow-strong: rgba(0, 240, 255, 0.4);
-  --brand-primary-subtle: rgba(0, 240, 255, 0.05);
+  /* Brand — EBC Teal (Logo Matched) */
+  --brand-primary: #4ECDC4;
+  --brand-primary-light: #78E5DE;
+  --brand-primary-dark: #1D8E87;
+  --brand-primary-glow: rgba(78, 205, 196, 0.22);
+  --brand-primary-glow-strong: rgba(78, 205, 196, 0.45);
+  --brand-primary-subtle: rgba(78, 205, 196, 0.08);
 
   /* Professional Monotone Accents (Replacing playful colors) */
   --accent-violet: #7000FF;
@@ -41,11 +41,11 @@
   --accent-amber-glow: rgba(255, 230, 0, 0.3);
   --accent-emerald: #00FF66;
 
-  /* Gradients - Cyber/Tech */
-  --gradient-brand: linear-gradient(135deg, #00F0FF 0%, #7000FF 100%);
-  --gradient-brand-vivid: linear-gradient(135deg, #00F0FF 0%, #7000FF 100%);
-  --gradient-brand-subtle: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(78,205,196,0.05) 0%, transparent 70%);
+  /* Gradients - Premium Teal */
+  --gradient-brand: linear-gradient(135deg, #4ECDC4 0%, #3F9BF5 100%);
+  --gradient-brand-vivid: linear-gradient(135deg, #4ECDC4 0%, #6DE7FF 60%, #3F9BF5 100%);
+  --gradient-brand-subtle: linear-gradient(135deg, rgba(78,205,196,0.14) 0%, rgba(63,155,245,0.05) 100%);
+  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(78,205,196,0.1) 0%, transparent 70%);
   --gradient-card-border: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
   --gradient-dark-fade: linear-gradient(180deg, var(--bg-void) 0%, transparent 100%);
 
@@ -161,8 +161,8 @@ body::after {
   inset: 0;
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(0, 240, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(78, 205, 196, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(78, 205, 196, 0.05) 1px, transparent 1px);
   pointer-events: none;
   z-index: 0;
   mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
@@ -277,8 +277,8 @@ ul, ol {
   letter-spacing: 0.12em;
   margin-bottom: var(--space-4);
   padding: var(--space-1) var(--space-3);
-  background: rgba(0, 240, 255, 0.05);
-  border: 1px solid rgba(0, 240, 255, 0.2);
+  background: rgba(78, 205, 196, 0.08);
+  border: 1px solid rgba(78, 205, 196, 0.25);
   border-radius: var(--radius-sm);
 }
 
@@ -346,6 +346,6 @@ ul, ol {
 
 /* Selection */
 ::selection {
-  background: rgba(0, 240, 255, 0.3);
+  background: rgba(78, 205, 196, 0.35);
   color: var(--text-white);
 }

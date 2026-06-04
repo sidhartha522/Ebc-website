@@ -12,7 +12,7 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background: radial-gradient(circle at 50% -20%, rgba(0, 240, 255, 0.15) 0%, transparent 60%);
+  background: radial-gradient(circle at 50% -20%, rgba(78, 205, 196, 0.2) 0%, transparent 60%);
   animation: pulseGlow 6s ease-in-out infinite alternate;
 }
 
@@ -23,12 +23,13 @@
 
 
 
+
 .hero-grid-overlay {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(78, 205, 196, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(78, 205, 196, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(78, 205, 196, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(78, 205, 196, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
