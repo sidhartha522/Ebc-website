@@ -59,14 +59,14 @@ export default function Navbar() {
 
         <div className="navbar-right">
           <a 
-            href="https://instagram.com/ebc.hyderabad" 
+            href="https://instagram.com/ebc.comm.unity" 
             target="_blank" 
             rel="noopener noreferrer"
             className="nav-instagram"
             id="nav-instagram"
           >
             <InstagramIcon size={18} />
-            <span>@ebc.hyderabad</span>
+            <span>@ebc.comm.unity</span>
           </a>
 
           <button
@@ -95,13 +95,13 @@ export default function Navbar() {
           ))}
           <div className="mobile-divider" />
           <a 
-            href="https://instagram.com/ebc.hyderabad" 
+            href="https://instagram.com/ebc.comm.unity" 
             target="_blank" 
             rel="noopener noreferrer"
             className="mobile-instagram"
           >
             <InstagramIcon size={18} />
-            <span>@ebc.hyderabad</span>
+            <span>@ebc.comm.unity</span>
           </a>
         </div>
       </div>

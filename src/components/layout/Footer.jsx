@@ -48,13 +48,13 @@ export default function Footer() {
             <h4 className="footer-heading">Community</h4>
             <div className="footer-links">
               <a 
-                href="https://instagram.com/ebc.hyderabad" 
+                href="https://instagram.com/ebc.comm.unity" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="footer-link footer-link-external"
               >
                 <InstagramIcon size={15} />
-                <span>@ebc.hyderabad</span>
+                <span>@ebc.comm.unity</span>
                 <ArrowUpRight size={12} />
               </a>
               <a 
