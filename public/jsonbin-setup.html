@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EBC JSONBin Setup</title>
+  <style>
+    body { font-family: monospace; background: #0a0a0a; color: #e0e0e0; padding: 40px; max-width: 800px; margin: 0 auto; }
+    h1 { color: #00f0ff; }
+    .step { margin: 20px 0; padding: 16px; border: 1px solid #333; border-radius: 8px; }
+    .step.done { border-color: #22c55e; }
+    .step.error { border-color: #ef4444; }
+    pre { background: #111; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 13px; white-space: pre-wrap; }
+    button { background: #00f0ff; color: #000; border: none; padding: 12px 24px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin: 20px 0; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .ids-box { background: #0d2b1f; border: 2px solid #22c55e; border-radius: 8px; padding: 20px; margin: 20px 0; }
+    .ids-box h2 { color: #22c55e; margin-top: 0; }
+    .copy-btn { background: #22c55e; color: #000; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>⚡ EBC JSONBin Setup</h1>
+  <p>Click the button below to create all 5 data bins in JSONBin. This runs once.</p>
+
+  <button id="startBtn" onclick="setup()">🚀 Create All Bins</button>
+
+  <div id="log"></div>
+  <div id="result" style="display:none" class="ids-box">
+    <h2>✅ All bins created! Copy these IDs into your code:</h2>
+    <pre id="idsOutput"></pre>
+    <button class="copy-btn" onclick="copyIds()">📋 Copy IDs</button>
+    <p style="color:#86efac; margin-top:16px;">
+      ⚠️ Save these IDs somewhere — you'll need them once in the code.
+    </p>
+  </div>
+
+  <script>
+    const API_KEY = '$2a$10$Qk/LZznDcd.SCu2kaquIOO/wNO4ArZDHBpjcoOgy94fihyUOzKf5a';
+
+    const initialData = {
+      'events': [
+        {"id":"evt-001","name":"EBC Meetup #27 — Founder Connect","description":"Join us for an evening of networking, startup pitches, and meaningful conversations.","date":"2026-06-21","time":"10:00 AM - 1:00 PM","venue":"T-Hub 2.0, Raidurg, Hyderabad","mapsLink":"https://maps.google.com/?q=T-Hub+2.0+Hyderabad","registrationLink":"https://forms.google.com/","status":"upcoming"},
+        {"id":"evt-002","name":"EBC Startup Showcase #5","description":"A platform for early-stage founders to showcase their startups.","date":"2026-07-05","time":"2:00 PM - 5:00 PM","venue":"WeWork Galaxy, Residency Road, Hyderabad","mapsLink":"https://maps.google.com/?q=WeWork+Galaxy+Hyderabad","registrationLink":"https://forms.google.com/","status":"upcoming"},
+        {"id":"evt-003","name":"EBC x Student Founders Meetup","description":"Exclusive meetup for student founders and aspiring entrepreneurs.","date":"2026-07-19","time":"11:00 AM - 2:00 PM","venue":"91springboard, Kondapur, Hyderabad","mapsLink":"","registrationLink":"https://forms.google.com/","status":"upcoming"},
+        {"id":"evt-004","name":"EBC Networking Night #12","description":"Our signature monthly networking event.","date":"2026-05-10","time":"6:00 PM - 9:00 PM","venue":"The Starter Labs, Gachibowli, Hyderabad","mapsLink":"","registrationLink":"","status":"past"}
+      ],
+      'stories': [
+        {"id":"story-001","name":"Rahul Sharma","designation":"Co-Founder, TechNova","story":"Found my co-founder through EBC. We met at Meetup #15 and within 3 months launched our SaaS product."},
+        {"id":"story-002","name":"Priya Reddy","designation":"Student, IIIT Hyderabad","story":"Got my first internship through EBC. A founder I met at a networking event offered me a role."},
+        {"id":"story-003","name":"Aditya Krishnan","designation":"Founder, GrowthPulse","story":"Found early users for my startup through EBC community."},
+        {"id":"story-004","name":"Meera Joshi","designation":"Business Owner","story":"Met amazing people through EBC who became not just business connections but genuine friends."},
+        {"id":"story-005","name":"Vikram Patel","designation":"Full-Stack Developer","story":"EBC helped me find a co-founder for my side project. We now have paying customers."}
+      ],
+      'whatsapp-groups': [
+        {"id":"wg-001","name":"EBC LB Nagar","area":"LB Nagar","description":"Connect with founders, students, and professionals in the LB Nagar area.","whatsappLink":"https://chat.whatsapp.com/","active":true},
+        {"id":"wg-002","name":"EBC Chaitanyapuri","area":"Chaitanyapuri","description":"Local builder community for Chaitanyapuri area.","whatsappLink":"https://chat.whatsapp.com/","active":true},
+        {"id":"wg-003","name":"EBC Dilsukhnagar","area":"Dilsukhnagar","description":"Join the Dilsukhnagar builder community.","whatsappLink":"https://chat.whatsapp.com/","active":true},
+        {"id":"wg-004","name":"EBC Nagole","area":"Nagole","description":"Nagole area community for aspiring founders.","whatsappLink":"https://chat.whatsapp.com/","active":true},
+        {"id":"wg-005","name":"EBC Uppal","area":"Uppal","description":"Connect with the builder community in Uppal.","whatsappLink":"https://chat.whatsapp.com/","active":true}
+      ],
+      'opportunities': [
+        {"id":"opp-001","role":"Sponsorship Lead","description":"Help secure sponsors and partnerships for EBC events.","skills":["Sales","Negotiation","Partnerships"],"timeCommitment":"3-5 Hours Weekly","formLink":"https://forms.google.com/","active":true},
+        {"id":"opp-002","role":"Venue Lead","description":"Find and secure venues for EBC meetups and events.","skills":["Outreach","Communication","Negotiation"],"timeCommitment":"2-4 Hours Weekly","formLink":"https://forms.google.com/","active":true},
+        {"id":"opp-003","role":"Guest Relations Lead","description":"Manage guest speakers, panelists, and special invitees.","skills":["Networking","Outreach","Relationship Management"],"timeCommitment":"3-5 Hours Weekly","formLink":"https://forms.google.com/","active":true},
+        {"id":"opp-004","role":"Social Media Team","description":"Create engaging content for EBC's social media presence.","skills":["Content Creation","Branding","Marketing"],"timeCommitment":"3-6 Hours Weekly","formLink":"https://forms.google.com/","active":true},
+        {"id":"opp-005","role":"Reddit & Community Growth Team","description":"Drive community growth through Reddit and online forums.","skills":["Growth Marketing","Community Building"],"timeCommitment":"2-5 Hours Weekly","formLink":"https://forms.google.com/","active":true},
+        {"id":"opp-006","role":"On Ground Operations Team","description":"Handle on-ground logistics and ensure every event runs smoothly.","skills":["Leadership","Event Management","Operations"],"timeCommitment":"Event Days","formLink":"https://forms.google.com/","active":true}
+      ],
+      'settings': {
+        "eventsConducted":26,"communityMembers":2200,"eventAttendees":600,"partnerships":15,"startupsLaunched":8,"internshipsCreated":12,
+        "instagramUrl":"https://instagram.com/ebc.comm.unity","founderInstagramUrl":"https://instagram.com/sidhartha.juluri",
+        "founderName":"Sidhartha Juluri","founderRole":"Founder, EBC",
+        "founderBio":"Started EBC to help founders, students, business owners and professionals meet the right people."
+      }
+    };
+
+    const collectedIds = {};
+
+    function log(msg, status = '') {
+      const div = document.createElement('div');
+      div.className = `step ${status}`;
+      div.innerHTML = msg;
+      document.getElementById('log').appendChild(div);
+    }
+
+    async function createBin(name, data) {
+      const res = await fetch('https://api.jsonbin.io/v3/b', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Master-Key': API_KEY,
+          'X-Bin-Name': 'ebc-' + name,
+        },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.message || JSON.stringify(json));
+      return json.metadata.id;
+    }
+
+    async function setup() {
+      document.getElementById('startBtn').disabled = true;
+      document.getElementById('log').innerHTML = '';
+
+      for (const [name, data] of Object.entries(initialData)) {
+        try {
+          log(`⏳ Creating bin: <strong>ebc-${name}</strong>...`);
+          const id = await createBin(name, data);
+          collectedIds[name] = id;
+          document.getElementById('log').lastElementChild.className = 'step done';
+          document.getElementById('log').lastElementChild.innerHTML = `✅ <strong>ebc-${name}</strong>: <code>${id}</code>`;
+        } catch (e) {
+          document.getElementById('log').lastElementChild.className = 'step error';
+          document.getElementById('log').lastElementChild.innerHTML = `❌ <strong>${name}</strong>: ${e.message}`;
+        }
+      }
+
+      if (Object.keys(collectedIds).length === 5) {
+        const output = JSON.stringify(collectedIds, null, 2);
+        document.getElementById('idsOutput').textContent = output;
+        document.getElementById('result').style.display = 'block';
+      } else {
+        log('⚠️ Some bins failed. Check errors above and try again.', 'error');
+        document.getElementById('startBtn').disabled = false;
+      }
+    }
+
+    function copyIds() {
+      navigator.clipboard.writeText(JSON.stringify(collectedIds, null, 2));
+      alert('Copied!');
+    }
+  </script>
+</body>
+</html>

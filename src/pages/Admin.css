@@ -338,7 +338,426 @@
   color: var(--text-dim);
 }
 
+/* Saved Badge */
+.admin-saved-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  animation: fadein 0.2s ease;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dashboard Tip */
+.admin-dashboard-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-6);
+  background: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.admin-dashboard-tip svg {
+  color: var(--brand-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Export Panel */
+.admin-export {
+  max-width: 900px;
+}
+
+.export-info-card {
+  background: rgba(0, 240, 255, 0.04);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.export-info-card h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: var(--space-4);
+}
+
+.export-info-card ol {
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.export-info-card code {
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--brand-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.export-note {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--bg-slate);
+}
+
+.export-modified-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: #22c55e;
+  margin-bottom: var(--space-6);
+}
+
+.export-files-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.export-file-card {
+  background: var(--bg-graphite);
+  border: 1px solid var(--bg-slate);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.export-file-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.export-file-modified {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.export-file-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--bg-slate);
+}
+
+.export-file-name {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 2px;
+}
+
+.export-file-count {
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.export-modified-tag {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.export-file-preview {
+  padding: var(--space-4) var(--space-5);
+  overflow: hidden;
+}
+
+.export-file-preview pre {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.5;
+  max-height: 80px;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.export-actions {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--bg-slate);
+}
+
+/* ── GitHub Banner ──────────────────────────────────────────── */
+.admin-github-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  margin-bottom: var(--space-6);
+  background: rgba(239, 68, 68, 0.07);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: #fca5a5;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.admin-github-banner:hover {
+  background: rgba(239, 68, 68, 0.12);
+}
+.admin-github-banner svg {
+  color: #ef4444;
+  flex-shrink: 0;
+}
+.admin-github-banner-ok {
+  background: rgba(34, 197, 94, 0.07);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: #86efac;
+  cursor: default;
+}
+.admin-github-banner-ok:hover {
+  background: rgba(34, 197, 94, 0.07);
+}
+.admin-github-banner-ok svg {
+  color: #22c55e;
+}
+
+/* ── GitHub Status Dot (sidebar) ────────────────────────────── */
+.github-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.github-status-ok  { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
+.github-status-warn { background: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
+
+/* ── Dashboard Setup Card ───────────────────────────────────── */
+.admin-setup-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  margin-top: var(--space-6);
+  background: rgba(139, 92, 246, 0.06);
+  border: 1px dashed rgba(139, 92, 246, 0.35);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.admin-setup-card:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.6);
+}
+.admin-setup-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: rgba(139, 92, 246, 0.15);
+  border-radius: var(--radius-md);
+  color: #a78bfa;
+  flex-shrink: 0;
+}
+.admin-setup-title {
+  font-weight: 700;
+  color: var(--text-heading);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-1);
+}
+.admin-setup-desc {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* ── GitHub Setup Page ──────────────────────────────────────── */
+.admin-github-setup {
+  max-width: 760px;
+}
+
+.github-how-it-works {
+  background: var(--bg-graphite);
+  border: 1px solid var(--bg-slate);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+.github-how-it-works h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: var(--space-5);
+}
+.github-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.github-step {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+.github-step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--gradient-brand);
+  color: var(--bg-void);
+  border-radius: 50%;
+  font-size: var(--text-xs);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.github-step strong {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+.github-step p {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.github-step a {
+  color: var(--brand-primary);
+  text-decoration: none;
+}
+.github-step a:hover { text-decoration: underline; }
+.github-step code {
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--brand-primary);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.github-security-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+  margin-bottom: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--bg-slate);
+}
+
+.github-path-preview {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--brand-primary);
+  background: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  margin-top: 8px;
+  word-break: break-all;
+}
+
+.github-status-msg {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+  animation: fadein 0.2s ease;
+}
+.github-status-msg-ok {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+.github-status-msg-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+/* ── Save Status Indicator ──────────────────────────────────── */
+.admin-save-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  animation: fadein 0.2s ease;
+}
+.admin-save-status-saving {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+}
+.admin-save-status-ok {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+.admin-save-status-error {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  cursor: help;
+}
+
+/* ── Spin animation ─────────────────────────────────────────── */
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 /* Responsive */
+
 @media (max-width: 900px) {
   .admin-page {
     flex-direction: column;
