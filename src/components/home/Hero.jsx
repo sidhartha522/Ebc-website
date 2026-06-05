@@ -19,9 +19,7 @@ export default function Hero() {
             </div>
 
           <h1 className="hero-title anim-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            Meet <span className="text-gradient">Founders &amp; Entrepreneurs</span>, Founders &amp;{' '}
-            <span className="text-gradient">Opportunities</span>{' '}
-            <span className="hero-title-line">Around You</span>
+            Meet <span className="text-gradient">Founders &amp; Entrepreneurs</span>, Founders &amp; <span className="text-gradient">Opportunities</span> Around You
           </h1>
 
           <p className="hero-subtitle anim-fade-in-up" style={{ animationDelay: '0.2s' }}>
