@@ -31,21 +31,6 @@ export default function Events() {
 
   return (
     <main className="events-page">
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-bg">
-          <div className="page-hero-blob" />
-        </div>
-        <div className="container">
-          <div className="page-hero-content animate-on-scroll">
-            <span className="section-label">Events</span>
-            <h1>Where <span className="text-gradient">Builders</span> Meet</h1>
-            <p className="page-hero-subtitle">
-              From networking nights to startup showcases — every EBC event is designed to help you build real connections and grow.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Upcoming Events */}
       {upcomingEvents.length > 0 && (

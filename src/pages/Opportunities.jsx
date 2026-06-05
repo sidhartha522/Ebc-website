@@ -28,7 +28,7 @@ export default function Opportunities() {
             </span>
             <h1>Help Build <span className="text-gradient">EBC</span></h1>
             <p className="page-hero-subtitle">
-              Work directly with founders, build practical skills and help grow one of Hyderabad's fastest-growing builder communities.
+                Work directly with founders, develop practical skills and help grow one of Hyderabad's fastest-growing startup communities.
             </p>
           </div>
         </div>

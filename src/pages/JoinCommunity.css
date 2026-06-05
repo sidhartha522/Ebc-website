@@ -1,155 +1,54 @@
 .join-page {
   min-height: 100vh;
+  position: relative;
+  padding-top: calc(var(--nav-height) + var(--space-12));
+  padding-bottom: var(--space-20);
 }
 
-/* Form */
-.join-form-wrapper {
-  max-width: 720px;
+/* WhatsApp Groups Section */
+.wa-groups {
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.join-form {
-  padding: var(--space-10);
-}
-
-.form-section {
-  margin-bottom: var(--space-10);
-}
-
-.form-section:last-of-type {
-  margin-bottom: var(--space-8);
-}
-
-.form-section-title {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: var(--text-heading);
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--bg-slate);
-}
-
-.form-optional {
-  font-size: var(--text-sm);
-  font-weight: 400;
-  color: var(--text-dim);
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-5);
-}
-
-.form-group-full {
-  grid-column: 1 / -1;
-}
-
-.form-label {
-  display: block;
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--text-secondary);
-  margin-bottom: var(--space-2);
-}
-
-.form-input {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: var(--text-base);
-  font-family: var(--font-body);
-  color: var(--text-heading);
-  background: var(--bg-graphite);
-  border: 1px solid var(--bg-slate);
-  border-radius: var(--radius-md);
-  outline: none;
-  transition: all var(--transition-fast);
-}
-
-.form-input::placeholder {
-  color: var(--text-dim);
-}
-
-.form-input:focus {
-  border-color: var(--brand-primary);
-  box-shadow: 0 0 0 3px var(--brand-primary-glow);
-}
-
-.form-select {
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238888A0' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 36px;
-}
-
-.form-select option {
-  background: var(--bg-graphite);
-  color: var(--text-primary);
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-.form-actions {
-  padding-top: var(--space-4);
-}
-
-/* Success */
-.join-success {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.join-success-card {
-  text-align: center;
-  padding: var(--space-12);
-  margin-bottom: var(--space-12);
-}
-
-.join-success-icon {
-  color: var(--brand-primary);
-  margin-bottom: var(--space-5);
-}
-
-.join-success-card h2 {
-  margin-bottom: var(--space-4);
-}
-
-.join-success-card p {
-  font-size: var(--text-lg);
-  color: var(--text-mist);
-}
-
-/* WhatsApp Groups */
-.wa-groups-title {
+.wa-groups-page-title {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-6);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
   color: var(--text-heading);
 }
 
-.wa-groups-title svg {
+.wa-groups-page-title svg {
   color: #25D366;
+  flex-shrink: 0;
+}
+
+.wa-groups-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-mist);
+  margin-bottom: var(--space-10);
+  max-width: 680px;
+  line-height: 1.6;
 }
 
 .wa-groups-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
 }
 
 .wa-group-card {
   padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .wa-group-name {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 600;
   color: var(--text-heading);
   margin-bottom: var(--space-2);
@@ -158,22 +57,30 @@
 .wa-group-area {
   font-size: var(--text-sm);
   color: var(--brand-primary);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+  font-weight: 500;
 }
 
 .wa-group-desc {
   font-size: var(--text-sm);
   color: var(--text-dim);
   line-height: 1.6;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
+  flex-grow: 1;
 }
 
-@media (max-width: 600px) {
-  .join-form {
-    padding: var(--space-6);
+@media (max-width: 768px) {
+  .join-page {
+    padding-top: calc(var(--nav-height) + var(--space-8));
   }
   
-  .form-grid {
-    grid-template-columns: 1fr;
+  .wa-groups-page-title {
+    font-size: var(--text-3xl);
+  }
+  
+  .wa-groups-subtitle {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-8);
   }
 }
+

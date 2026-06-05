@@ -13,7 +13,7 @@ export default function JoinCTA() {
         <div className="join-cta-content animate-on-scroll">
           <Sparkles className="join-cta-sparkle" size={32} />
           <h2 className="join-cta-title">
-            Ready To Meet <span className="text-gradient">Builders</span> Around You?
+            Ready To Meet <span className="text-gradient">Founders &amp; Entrepreneurs</span> Around You?
           </h2>
           <p className="join-cta-subtitle">
             Join 2,200+ founders, students, business owners and professionals who are already part of the EBC community.

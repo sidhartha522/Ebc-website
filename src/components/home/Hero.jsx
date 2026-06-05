@@ -13,13 +13,13 @@ export default function Hero() {
 
       <div className="container hero-container">
         <div className="hero-content">
-          <div className="hero-badge anim-fade-in-up">
-            <Sparkles size={14} />
-            <span>Hyderabad's Builder Community</span>
-          </div>
+            <div className="hero-badge anim-fade-in-up">
+              <Sparkles size={14} />
+              <span>Hyderabad's Founder & Entrepreneur Community</span>
+            </div>
 
           <h1 className="hero-title anim-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            Meet <span className="text-gradient">Builders</span>, Founders &{' '}
+            Meet <span className="text-gradient">Founders &amp; Entrepreneurs</span>, Founders &amp;{' '}
             <span className="text-gradient">Opportunities</span>{' '}
             <span className="hero-title-line">Around You</span>
           </h1>
@@ -46,7 +46,7 @@ export default function Hero() {
               ))}
             </div>
             <p className="hero-proof-text">
-              <strong>2,200+</strong> builders already joined
+              <strong>2,200+</strong> founders & entrepreneurs already joined
             </p>
           </div>
         </div>

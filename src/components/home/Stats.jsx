@@ -14,7 +14,7 @@ export default function Stats({ settings }) {
       <div className="container">
         <div className="section-header animate-on-scroll">
           <span className="section-label">Community Impact</span>
-          <h2>Built by builders.<br/><span className="text-brand">Growing every month.</span></h2>
+          <h2>Built by founders &amp; entrepreneurs.<br/><span className="text-brand">Growing every month.</span></h2>
           <p>
             Over the past few months, EBC has brought together founders, students, business owners and professionals through networking events, startup discussions and community meetups.
           </p>

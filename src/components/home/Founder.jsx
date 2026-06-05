@@ -9,7 +9,7 @@ export default function Founder({ settings }) {
       <div className="container">
         <div className="section-header animate-on-scroll">
           <span className="section-label">The Founder</span>
-          <h2>Built By Builders,<br/><span className="text-brand">For Builders</span></h2>
+          <h2>Built By Founders &amp; Entrepreneurs,<br/><span className="text-brand">For Visionaries</span></h2>
         </div>
 
         <div className="founder-card animate-on-scroll">
