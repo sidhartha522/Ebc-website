@@ -19,11 +19,11 @@ export default function Hero() {
             </div>
 
           <h1 className="hero-title anim-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            Meet <span className="text-gradient">Founders &amp; Entrepreneurs</span>, Founders &amp; <span className="text-gradient">Opportunities</span> Around You
+            Meet people you'll actually keep meeting.
           </h1>
 
           <p className="hero-subtitle anim-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            EBC is a community where startup founders, business owners, students, aspiring founders, investors and professionals connect, collaborate and grow together.
+            A community for founders, professionals, students, and curious people to connect in real life, right around you.
           </p>
 
           <div className="hero-actions anim-fade-in-up" style={{ animationDelay: '0.3s' }}>
