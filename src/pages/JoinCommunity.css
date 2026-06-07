@@ -14,16 +14,18 @@
 .wa-groups-page-title {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  font-size: var(--text-4xl);
-  font-weight: 700;
-  margin-bottom: var(--space-3);
+  gap: var(--space-4);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: var(--space-4);
   color: var(--text-heading);
+  letter-spacing: -0.02em;
 }
 
 .wa-groups-page-title svg {
   color: #25D366;
   flex-shrink: 0;
+  filter: drop-shadow(0 0 12px rgba(37, 211, 102, 0.4));
 }
 
 .wa-groups-subtitle {
@@ -41,10 +43,23 @@
 }
 
 .wa-group-card {
-  padding: var(--space-6);
+  padding: 32px;
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: rgba(11, 11, 11, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wa-group-card:hover {
+  transform: translateY(-8px);
+  background: rgba(16, 16, 16, 0.8);
+  border-color: rgba(117, 201, 193, 0.2);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.8), 0 0 40px rgba(117, 201, 193, 0.05);
 }
 
 .wa-group-name {

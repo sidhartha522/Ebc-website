@@ -14,6 +14,8 @@ export default function Admin() {
   const [pw, setPw] = useState('');
   const [tab, setTab] = useState('dashboard');
   const [err, setErr] = useState('');
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const [authMessage, setAuthMessage] = useState('');
 
   useEffect(() => {
     document.title = 'Admin — EBC';
@@ -22,20 +24,61 @@ export default function Admin() {
 
   const login = (e) => {
     e.preventDefault();
-    if (pw === ADMIN_PASS) { setAuth(true); localStorage.setItem('ebc_admin_auth', 'true'); setErr(''); }
+    if (pw === ADMIN_PASS) {
+      setErr('');
+      setIsAuthenticating(true);
+      setAuthMessage('Connecting to EBC Network...');
+      
+      setTimeout(() => setAuthMessage('Authenticating Access...'), 800);
+      setTimeout(() => setAuthMessage('Preparing Admin Environment...'), 1600);
+      
+      setTimeout(() => {
+        setAuth(true);
+        localStorage.setItem('ebc_admin_auth', 'true');
+        setIsAuthenticating(false);
+      }, 2400);
+    }
     else setErr('Invalid password');
   };
 
   if (!auth) return (
     <main className="admin-login-page">
-      <div className="admin-login-card">
-        <div className="admin-login-logo"><Star size={24} fill="currentColor" /></div>
-        <h2>EBC Admin</h2>
-        <p>Enter password to access the admin panel.</p>
+      {/* Ambient Animated Layers Handled by AmbientBackground globally */}
+      <div className={`admin-login-card ${isAuthenticating ? 'is-authenticating' : ''}`}>
+        <div className="admin-login-logo-container">
+          <div className="admin-login-logo-glow"></div>
+          <img src="/images/logo.png" alt="EBC Logo" className="admin-login-logo-img" />
+          <div className="admin-login-subtitle">EKTHAA BUSINESS & BUILDER COMMUNITY</div>
+        </div>
+        
+        <h2>Admin Portal</h2>
+        <p>Secure access to the Ekthaa ecosystem management platform.</p>
+        
         <form onSubmit={login} className="admin-login-form">
-          <input type="password" className="form-input" value={pw} onChange={e => setPw(e.target.value)} placeholder="Admin password" autoFocus />
+          <div className="login-input-wrapper">
+            <input 
+              type="password" 
+              className="form-input login-input" 
+              value={pw} 
+              onChange={e => setPw(e.target.value)} 
+              placeholder="Enter admin password" 
+              autoFocus 
+              disabled={isAuthenticating}
+            />
+            <div className="login-input-border"></div>
+          </div>
           {err && <p className="admin-error">{err}</p>}
-          <button type="submit" className="btn btn-primary btn-md btn-full">Login</button>
+          
+          <button type="submit" className={`btn btn-primary login-btn ${isAuthenticating ? 'loading-state' : ''}`} disabled={isAuthenticating}>
+            {isAuthenticating ? (
+              <div className="auth-sequence">
+                <div className="auth-spinner"></div>
+                <span>{authMessage}</span>
+              </div>
+            ) : (
+              <span>Access Dashboard</span>
+            )}
+          </button>
         </form>
       </div>
     </main>
@@ -55,7 +98,7 @@ export default function Admin() {
     <main className="admin-page">
       <aside className="admin-sidebar">
         <div className="admin-sidebar-header">
-          <Star size={20} fill="currentColor" className="text-brand" />
+          <img src="/images/logo.png" alt="EBC Logo" style={{ width: 26, height: 26, objectFit: 'contain' }} />
           <span>EBC Admin</span>
         </div>
         <nav className="admin-nav">

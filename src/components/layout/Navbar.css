@@ -1,18 +1,25 @@
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--nav-height);
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  height: 72px;
   z-index: var(--z-sticky);
-  transition: all var(--transition-base);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 36px;
+  background: rgba(5, 5, 5, 0.4);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-scrolled {
-  background: rgba(6, 6, 10, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
+  background: rgba(11, 11, 11, 0.85);
+  border-color: rgba(117, 201, 193, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  width: calc(100% - 64px);
 }
 
 .navbar-inner {
@@ -20,36 +27,57 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  gap: var(--space-8);
+  padding: 0 32px;
 }
 
 /* Logo */
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 12px;
   text-decoration: none;
   color: var(--text-heading);
   flex-shrink: 0;
+  position: relative;
 }
 
 .logo-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.logo-icon::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, var(--brand-glow) 0%, transparent 70%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.navbar-logo:hover .logo-icon::before {
+  opacity: 1;
 }
 
 .ebc-logo-img {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   object-fit: cover;
   mix-blend-mode: screen;
   border-radius: 6px;
+  transition: transform 0.4s ease;
+}
+
+.navbar-logo:hover .ebc-logo-img {
+  transform: scale(1.05);
 }
 
 .logo-text {
   font-family: var(--font-heading);
-  font-size: var(--text-xl);
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -59,35 +87,35 @@
   font-size: 9px;
   font-weight: 600;
   color: var(--brand-primary);
-  background: var(--brand-primary-subtle);
-  border: 1px solid rgba(78, 205, 196, 0.15);
-  padding: 2px 6px;
+  background: var(--brand-subtle);
+  border: 1px solid rgba(117, 201, 193, 0.2);
+  padding: 3px 8px;
   border-radius: var(--radius-full);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
 
 /* Nav Links */
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: 8px;
 }
 
 .nav-link {
   position: relative;
-  padding: 8px 14px;
-  font-size: var(--text-sm);
+  padding: 8px 16px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-mist);
   text-decoration: none;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-heading);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-link-active {
@@ -96,13 +124,14 @@
 
 .nav-link-indicator {
   position: absolute;
-  bottom: 2px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-  width: 16px;
+  width: 20px;
   height: 2px;
   background: var(--brand-primary);
   border-radius: var(--radius-full);
+  box-shadow: 0 0 10px var(--brand-glow);
 }
 
 /* Right Side */
@@ -113,29 +142,28 @@
   flex-shrink: 0;
 }
 
-.nav-instagram {
+.nav-meetup-btn {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--brand-primary);
+  border-radius: 24px;
+  color: var(--brand-primary);
   font-weight: 500;
-  color: var(--text-mist);
+  font-size: var(--text-sm);
   text-decoration: none;
-  padding: 6px 12px;
-  border-radius: var(--radius-sm);
-  border: 1px solid transparent;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease;
 }
 
-.nav-instagram:hover {
-  color: var(--brand-primary);
-  border-color: var(--glass-border);
-  background: var(--brand-primary-subtle);
+.nav-meetup-btn:hover {
+  background: rgba(117, 201, 193, 0.1);
+  box-shadow: 0 0 12px rgba(117, 201, 193, 0.2);
 }
 
 /* Mobile Toggle */
 .mobile-toggle {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -224,14 +252,6 @@
 @media (max-width: 900px) {
   .navbar-links {
     display: none;
-  }
-
-  .nav-instagram span {
-    display: none;
-  }
-
-  .mobile-toggle {
-    display: flex;
   }
 }
 

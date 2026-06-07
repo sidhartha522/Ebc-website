@@ -21,14 +21,14 @@ export default function Footer() {
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
               <div className="footer-logo-icon footer-logo-img-wrapper">
-                <img src="/images/logo.jpg" alt="EBC Logo" className="ebc-logo-img footer-ebc-logo" />
+                <img src="/images/logo.png" alt="EBC Logo" className="ebc-logo-img footer-ebc-logo" />
               </div>
               <span className="footer-logo-text">EBC</span>
             </Link>
             <p className="footer-tagline">
               Ekthaa Business & Builders Community — Where founders, students, business owners and professionals connect, collaborate and grow together.
             </p>
-            <p className="footer-location">📍 Hyderabad, India</p>
+            <p className="footer-location">Hyderabad, India</p>
           </div>
 
           {/* Quick Links */}

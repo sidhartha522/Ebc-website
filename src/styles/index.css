@@ -1,63 +1,48 @@
 /* ============================================
    EBC — Ekthaa Business & Builders Community
-   Design System — "Midnight Builder"
-   Primary Brand Color: #4ECDC4 (Teal)
+   Design System — "Luxury Founder Ecosystem"
+   Primary Brand Color: #75C9C1 (Teal)
    ============================================ */
 
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* --- CSS Custom Properties --- */
 :root {
-  /* Background Scale - Deep Tech Void */
-  --bg-void: #000000;
-  --bg-obsidian: #030303;
-  --bg-graphite: #080808;
-  --bg-slate: #111111;
-  --bg-elevated: #1A1A1A;
+  /* Background Scale - Premium Depth */
+  --bg-void: #050505;
+  --bg-surface: #0B0B0B;
+  --bg-card: #101010;
+  --bg-elevated: #151515;
 
   /* Text Scale */
-  --text-dim: #444444;
-  --text-mist: #888888;
-  --text-secondary: #A1A1AA;
-  --text-primary: #E4E4E7;
+  --text-dim: #737373;
+  --text-mist: #8A8A8A;
+  --text-secondary: #A3A3A3;
+  --text-primary: #E5E5E5;
   --text-heading: #FFFFFF;
-  --text-white: #FFFFFF;
 
-  /* Brand — EBC Teal (Logo Matched) */
-  --brand-primary: #4ECDC4;
-  --brand-primary-light: #78E5DE;
-  --brand-primary-dark: #1D8E87;
-  --brand-primary-glow: rgba(78, 205, 196, 0.22);
-  --brand-primary-glow-strong: rgba(78, 205, 196, 0.45);
-  --brand-primary-subtle: rgba(78, 205, 196, 0.08);
+  /* Brand — EBC Luxury Teal */
+  --brand-primary: #75C9C1;
+  --brand-light: #8BD8D0;
+  --brand-dark: #5EAFA7;
+  --brand-glow: rgba(117, 201, 193, 0.25);
+  --brand-glow-strong: rgba(117, 201, 193, 0.45);
+  --brand-subtle: rgba(117, 201, 193, 0.08);
 
-  /* Professional Monotone Accents (Replacing playful colors) */
-  --accent-violet: #7000FF;
-  --accent-violet-glow: rgba(112, 0, 255, 0.3);
-  --accent-rose: #FF0055;
-  --accent-rose-glow: rgba(255, 0, 85, 0.3);
-  --accent-amber: #FFE600;
-  --accent-amber-glow: rgba(255, 230, 0, 0.3);
-  --accent-emerald: #00FF66;
-
-  /* Gradients - Premium Teal */
-  --gradient-brand: linear-gradient(135deg, #4ECDC4 0%, #3F9BF5 100%);
-  --gradient-brand-vivid: linear-gradient(135deg, #4ECDC4 0%, #6DE7FF 60%, #3F9BF5 100%);
-  --gradient-brand-subtle: linear-gradient(135deg, rgba(78,205,196,0.14) 0%, rgba(63,155,245,0.05) 100%);
-  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(78,205,196,0.1) 0%, transparent 70%);
-  --gradient-card-border: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+  /* Gradients - Premium lighting */
+  --gradient-brand: linear-gradient(135deg, #8BD8D0 0%, #5EAFA7 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
   --gradient-dark-fade: linear-gradient(180deg, var(--bg-void) 0%, transparent 100%);
 
-  /* Tech Panels - Sharp */
-  --glass-bg: rgba(255, 255, 255, 0.01);
-  --glass-bg-strong: rgba(0, 0, 0, 0.95);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-hover: var(--brand-primary);
+  /* Tech Panels - Glassmorphism */
+  --glass-bg: rgba(11, 11, 11, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(117, 201, 193, 0.4);
 
   /* Typography */
-  --font-heading: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'SF Pro Display', 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Font Sizes — Fluid */
@@ -87,39 +72,40 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Border Radius - Sharp */
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
+  /* Border Radius - Elegant */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
-  --shadow-xl: 0 16px 48px rgba(0,0,0,0.6);
-  --shadow-glow: 0 0 20px var(--brand-primary-glow), 0 0 60px var(--brand-primary-glow);
-  --shadow-glow-strong: 0 0 30px var(--brand-primary-glow-strong), 0 0 80px var(--brand-primary-glow);
+  /* Shadows - Premium */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 24px var(--brand-glow);
+  --shadow-glow-strong: 0 0 40px var(--brand-glow-strong);
 
   /* Transitions */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Z-Index Scale */
-  --z-base: 1;
-  --z-dropdown: 10;
-  --z-sticky: 50;
-  --z-overlay: 100;
-  --z-modal: 200;
-  --z-toast: 300;
+  --z-bg: 0;
+  --z-base: 10;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-overlay: 1000;
+  --z-modal: 2000;
+  --z-toast: 3000;
 
   /* Layout */
   --max-width: 1280px;
-  --nav-height: 72px;
+  --nav-height: 80px;
 }
 
 /* --- Reset & Base --- */
@@ -145,29 +131,7 @@ body {
   min-height: 100vh;
 }
 
-/* Noise and Grid texture overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(78, 205, 196, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(78, 205, 196, 0.05) 1px, transparent 1px);
-  pointer-events: none;
-  z-index: 0;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
-}
+/* Noise and Grid texture removed - managed by AmbientBackground component */
 
 #root {
   position: relative;
@@ -276,14 +240,14 @@ ul, ol {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: var(--space-4);
-  padding: var(--space-1) var(--space-3);
-  background: rgba(78, 205, 196, 0.08);
-  border: 1px solid rgba(78, 205, 196, 0.25);
-  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  background: var(--brand-subtle);
+  border: 1px solid rgba(117, 201, 193, 0.2);
+  border-radius: var(--radius-full);
 }
 
 .text-gradient {
-  background: var(--gradient-brand-vivid);
+  background: var(--gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -293,26 +257,28 @@ ul, ol {
   color: var(--brand-primary);
 }
 
-/* Tech Panel */
+/* Premium Card (Replaces Tech Panel) */
 .glass-card {
-  background: var(--glass-bg);
+  background: var(--bg-card);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  border-radius: var(--radius-2xl);
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .glass-card:hover {
   border-color: var(--glass-border-hover);
   box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  background: var(--bg-elevated);
 }
 
 /* Scroll Animation */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-on-scroll.is-visible {
@@ -336,16 +302,16 @@ ul, ol {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-slate);
+  background: var(--bg-elevated);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-primary-dark);
+  background: var(--brand-dark);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(78, 205, 196, 0.35);
-  color: var(--text-white);
+  background: var(--brand-glow-strong);
+  color: var(--text-heading);
 }

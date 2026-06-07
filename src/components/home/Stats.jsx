@@ -34,7 +34,7 @@ export default function Stats({ settings }) {
         </div>
 
         <div className="stats-tagline animate-on-scroll delay-4">
-          <span className="stats-location-badge">📍 Growing Across Hyderabad</span>
+          <span className="stats-location-badge">Growing Across Hyderabad</span>
           <p>Founders, Students, Business Owners & Professionals</p>
         </div>
       </div>

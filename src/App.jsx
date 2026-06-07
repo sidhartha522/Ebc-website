@@ -9,6 +9,7 @@ import Opportunities from './pages/Opportunities';
 import JoinCommunity from './pages/JoinCommunity';
 import About from './pages/About';
 import Admin from './pages/Admin';
+import AmbientBackground from './components/common/AmbientBackground';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,6 +25,7 @@ function AppLayout() {
 
   return (
     <>
+      <AmbientBackground />
       <Navbar />
       <ScrollToTop />
       <Routes>
