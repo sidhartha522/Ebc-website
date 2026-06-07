@@ -36,14 +36,6 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`} id="main-nav">
       <div className="navbar-inner container">
-        <Link to="/" className="navbar-logo" id="nav-logo">
-          <div className="logo-icon logo-img-wrapper">
-            <img src="/images/logo.jpg" alt="EBC Logo" className="ebc-logo-img" />
-          </div>
-          <span className="logo-text">EBC</span>
-          <span className="logo-badge">Hyderabad</span>
-        </Link>
-
         <div className="navbar-links" id="nav-links">
           {navLinks.map((link) => (
             <Link

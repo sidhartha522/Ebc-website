@@ -13,7 +13,11 @@ export default function Hero() {
 
       <div className="container hero-container">
         <div className="hero-content">
-            <div className="hero-badge anim-fade-in-up">
+            <div className="hero-logo anim-fade-in-up">
+              <img src="/images/logo.png" alt="EBC Logo" className="hero-logo-img" />
+            </div>
+
+            <div className="hero-badge anim-fade-in-up" style={{ animationDelay: '0.05s' }}>
               <Sparkles size={14} />
               <span>Hyderabad's Founder & Entrepreneur Community</span>
             </div>
@@ -37,11 +41,11 @@ export default function Hero() {
 
           <div className="hero-proof anim-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <div className="hero-avatars">
-              {[1,2,3,4,5].map(i => (
-                <div key={i} className="hero-avatar">
-                  {String.fromCharCode(64 + i)}
-                </div>
-              ))}
+              <div className="hero-avatar"><img src="/images/avatar1.png" alt="Community member" className="hero-avatar-img" /></div>
+              <div className="hero-avatar"><img src="/images/avatar2.png" alt="Community member" className="hero-avatar-img" /></div>
+              <div className="hero-avatar"><img src="/images/avatar3.png" alt="Community member" className="hero-avatar-img" /></div>
+              <div className="hero-avatar"><img src="/images/avatar4.png" alt="Community member" className="hero-avatar-img" /></div>
+              <div className="hero-avatar"><img src="/images/avatar5.png" alt="Community member" className="hero-avatar-img" /></div>
             </div>
             <p className="hero-proof-text">
               <strong>2,200+</strong> founders & entrepreneurs already joined
