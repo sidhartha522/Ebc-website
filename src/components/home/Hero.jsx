@@ -73,7 +73,6 @@ export default function Hero() {
               <img src="/images/avatar3.png" alt="Member" className="hero-avatar-circle" />
               <img src="/images/avatar4.png" alt="Member" className="hero-avatar-circle" />
               <img src="/images/avatar5.png" alt="Member" className="hero-avatar-circle" />
-              <img src="/images/avatar6.png" alt="Member" className="hero-avatar-circle" />
               <div className="hero-avatar-count">2.3K+</div>
             </div>
             <p className="hero-avatars-text">

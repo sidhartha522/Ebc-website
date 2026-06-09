@@ -6,7 +6,8 @@
   width: calc(100% - 48px);
   max-width: 1200px;
   height: 72px;
-  z-index: var(--z-sticky);
+  /* navbar sits ABOVE the mobile menu overlay */
+  z-index: 600;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 36px;
   background: rgba(5, 5, 5, 0.4);
@@ -161,9 +162,9 @@
   box-shadow: 0 0 12px rgba(117, 201, 193, 0.2);
 }
 
-/* Mobile Toggle */
+/* Mobile Toggle — hidden on desktop, shown on mobile */
 .mobile-toggle {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -180,30 +181,65 @@
   color: var(--brand-primary);
 }
 
-/* Mobile Menu */
+/* Mobile Menu
+   — rendered via React Portal into document.body
+   — position:fixed now correctly covers the full viewport
+   — navbar z-index (600) sits above this (500) so the X button remains accessible
+*/
 .mobile-menu {
   position: fixed;
-  inset: 0;
-  top: var(--nav-height);
-  background: rgba(6, 6, 10, 0.98);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  z-index: var(--z-overlay);
+  inset: 0;              /* full viewport: top:0, right:0, bottom:0, left:0 */
+  top: 0;
+  z-index: 500;          /* below navbar(600) so nav bar stays on top */
+  background: rgba(6, 6, 10, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-base);
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-menu-open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-menu-inner {
   display: flex;
   flex-direction: column;
-  padding: var(--space-8) var(--space-6);
+  padding-top: var(--space-6);
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+  padding-bottom: var(--space-8);
   gap: var(--space-2);
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Close button inside the sidebar */
+.mobile-menu-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-bottom: var(--space-4);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-menu-close:hover {
+  background: rgba(117, 201, 193, 0.15);
+  border-color: rgba(117, 201, 193, 0.4);
+  color: var(--brand-primary);
 }
 
 .mobile-link {
@@ -249,9 +285,43 @@
 }
 
 /* Responsive */
+
+/* Desktop: show nav links, hide hamburger */
+@media (min-width: 901px) {
+  .navbar-links {
+    display: flex !important;
+  }
+
+  .mobile-toggle {
+    display: none !important;
+  }
+
+  .navbar-left {
+    display: none;
+  }
+}
+
+/* Tablet / Mobile: hide nav links, show hamburger */
 @media (max-width: 900px) {
   .navbar-links {
-    display: none;
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+  }
+
+  .navbar {
+    width: calc(100% - 32px);
+    top: 16px;
+  }
+
+  .navbar-scrolled {
+    width: calc(100% - 40px);
+  }
+
+  .mobile-menu-inner {
+    padding-top: var(--space-6);
   }
 }
 
@@ -259,8 +329,26 @@
   .logo-badge {
     display: none;
   }
-  
+
   .nav-instagram {
     display: none;
+  }
+
+  .nav-meetup-btn span {
+    display: none;
+  }
+
+  .nav-meetup-btn {
+    padding: 8px 12px;
+    gap: 0;
+  }
+
+  .navbar {
+    width: calc(100% - 24px);
+    top: 12px;
+  }
+
+  .mobile-menu-inner {
+    padding-top: var(--space-6);
   }
 }
