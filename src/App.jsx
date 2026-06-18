@@ -11,6 +11,17 @@ import About from './pages/About';
 import Admin from './pages/Admin';
 import AmbientBackground from './components/common/AmbientBackground';
 
+const routeElements = [
+  { path: '/', element: <Home /> },
+  { path: '/events', element: <Events /> },
+  { path: '/events/:id', element: <EventDetail /> },
+  { path: '/opportunities', element: <Opportunities /> },
+  { path: '/oppurtinities', element: <Opportunities /> },
+  { path: '/join', element: <JoinCommunity /> },
+  { path: '/about', element: <About /> },
+  { path: '/admin', element: <Admin /> },
+];
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -29,13 +40,9 @@ function AppLayout() {
       <Navbar />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/events/:id" element={<EventDetail />} />
-        <Route path="/opportunities" element={<Opportunities />} />
-        <Route path="/join" element={<JoinCommunity />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/admin" element={<Admin />} />
+        {routeElements.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
       </Routes>
       {!isAdmin && <Footer />}
     </>
